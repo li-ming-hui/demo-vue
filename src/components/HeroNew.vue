@@ -26,7 +26,7 @@
           id="bio"
           v-model="hero.bio">
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="submit" class="btn btn-default">提交</button>
     </form>
   </div>
 </template>

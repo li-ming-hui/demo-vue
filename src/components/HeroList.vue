@@ -40,8 +40,8 @@
 </template>
 
 <script>
-import axios from 'axios'
-import $ from 'jquery'
+import axios from "axios";
+import $ from "jquery";
 /**
  * 删除英雄
  * 1. 为 删除 按钮注册点击事件
@@ -71,21 +71,20 @@ import $ from 'jquery'
  *   5. 根据响应做交互
  */
 export default {
-  data () {
+  data() {
     return {
-      heros: [
-      ]
-    }
+      heros: []
+    };
   },
-  created () {
-    this.loadHeroList()
+  created() {
+    this.loadHeroList();
   },
   methods: {
-    async loadHeroList () {
+    async loadHeroList() {
       // axips.get() 方法会返回一个 Promise 对象
-      const res = await axios.get('http://localhost:3000/heros')
-      console.log(res.data)
-      this.heros = res.data
+      const res = await axios.get("http://localhost:3000/heros");
+      console.log(res.data);
+      this.heros = res.data;
       // axios.get('http://localhost:3000/heros').then(res => {
       //   this.heros = res.data
       // })
@@ -99,19 +98,20 @@ export default {
       //   this.heros = data
       // })
     },
-    removeHero (herodId) {
-      if (!window.confirm('Are you ok？')) {
-        return
+    removeHero(herodId) {
+      if (!window.confirm("Are you ok？")) {
+        return;
       }
       axios.delete(`http://localhost:3000/heros/${herodId}`).then(res => {
         if (res.status === 200) {
-          this.loadHeroList()
+          this.loadHeroList();
         }
-      })
+      });
     }
   }
-}
+};
 </script>
 
 <style>
+
 </style>
